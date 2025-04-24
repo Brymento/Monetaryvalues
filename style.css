@@ -16,7 +16,7 @@ body {
 }
 p {
     color: #444444;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 18.5pt;
     line-height: 1.15;
     margin: 4pt;
@@ -30,19 +30,19 @@ p.value {
     font-size: 24pt;
     line-height: 2.11666656px;
     letter-spacing: 0.03em;
-    font-family: 'Montserrat';
+    font-family: 'Times New Roman';
 }
 
 p.axis_name {
     margin-top: 50px;
     color: #333333;
     font-size: 19pt;
-    font-family: 'Montserrat';
+    font-family: 'Times New Roman';
 }
 p.question {
     margin: 16pt auto;
     color: #333333;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: normal;
     width: 70%;
     min-width: 500pt;
@@ -59,7 +59,7 @@ p.question {
 }
 h1 {
     color: #222222;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 72pt;
     text-align: center;
     line-height: 72pt;
@@ -68,7 +68,7 @@ h1 {
 }
 h2 {
     color: #333333;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 34pt;
     line-height: 36pt;
     margin-top: 12pt;
@@ -83,7 +83,7 @@ a {
 }
 div.center {
     background-color: #eeeeee;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     border-radius: 8pt;
     padding: 6pt;
     color: white;
@@ -108,7 +108,7 @@ div.quadcolumn {
 div.axis_name {
     color: #333333;
     font-size: 19pt;
-    font-family: 'Montserrat';
+    font-family: 'Times New Roman';
     display: inline-block;
     padding-bottom: 8.65pt;
 }
@@ -123,7 +123,7 @@ div.axis_name {
 }
 .button {
     background-color: #2196f3;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     border: none;
     border-radius: 8pt;
     color: white;
@@ -151,7 +151,7 @@ div.axis_name {
 
 .small_button, .small_button_off {
     background-color: #333;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     border: none;
     border-radius: 8pt;
     color: white;
@@ -219,7 +219,7 @@ div.bar {
     width: 50%;
 }
 div.text-wrapper {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 36pt;
     line-height: 36pt;
     color: #222222;
