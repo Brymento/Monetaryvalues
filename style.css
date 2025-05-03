@@ -118,7 +118,7 @@ div.quadcolumn {
 
 /* Items in two-column layout */
 .twocolumn {
-    width: 48%;
+    width: 100%;
     box-sizing: border-box;
 }
 div.axis_name {
