@@ -95,27 +95,32 @@ div.center {
     font-size: 12pt;
     margin: auto;
 }
+
+/* Images in the quad layout */
 img.quadcolumn {
     width: 23.75%;
     transition: transform .3s;
 }
 img.quadcolumn:hover {
     transform: scale(1.05);
-  }
+}
 div.quadcolumn {
     width: 23.75%;
 }
+
+/* Two-column section wrapper: align like the rest */
 .twocolwrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .twocolumn {
-    width: 42.5%;
-  }
+}
+
+/* Items in two-column layout */
+.twocolumn {
+    width: 48%;
+    box-sizing: border-box;
+}
 div.axis_name {
     color: #333333;
     font-size: 19pt;
