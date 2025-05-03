@@ -96,30 +96,30 @@ div.center {
     margin: auto;
 }
 
-/* Images in the quad layout */
 img.quadcolumn {
     width: 23.75%;
     transition: transform .3s;
 }
+
 img.quadcolumn:hover {
     transform: scale(1.05);
 }
+
 div.quadcolumn {
     width: 23.75%;
 }
 
-/* Two-column section wrapper: align like the rest */
 .twocolwrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    max-width: 48%;
+    margin: 20px auto 0 auto;
+    text-align: center;
 }
 
-/* Items in two-column layout */
 .twocolumn {
     width: 100%;
-    box-sizing: border-box;
 }
 div.axis_name {
     color: #333333;
