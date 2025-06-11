@@ -1,3 +1,6 @@
+// In loving memory of Pope Francis
+
+
 const variableMap = [
     "con",   // 0
     "equ",   // 1

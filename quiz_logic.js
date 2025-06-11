@@ -1,3 +1,6 @@
+    // In loving memory of Pope Francis
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const max = {}, scores = {}, responseArrays = {};
     let qn = 0;
@@ -50,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function results() {
         const query = variableMap.map((key) => {
             const total = responseArrays[key].reduce((a, b) => a + b, 0);
-            return `${key[0]}=${calc_score(total, max[key])}`;
+            return `${key}=${calc_score(total, max[key])}`;
         }).join("&");
 
         location.href = `results.html?${query}`;

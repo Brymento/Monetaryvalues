@@ -1,3 +1,6 @@
+/* */
+
+
 /* Base setup */
 html {
     background-color: #bbbbbb;
@@ -14,7 +17,7 @@ html {
     font-family: 'Montserrat', sans-serif;
   }
   
-/* Additional Axis Bar Colors */
+/* Axis Bar Colours */
 div.control         { background-color: #e71919; text-align: left; border-right-style: solid; }
 div.demand          { background-color: #dde01e; text-align: right; border-left-style: solid; }
 div.equality        { background-color: #f57c00; text-align: left; border-right-style: solid; }
@@ -36,7 +39,7 @@ div.minarchism      { background-color: #7b1fa2; text-align: right; border-left-
 div.slowgrowth      { background-color: #689f38; text-align: left; border-right-style: solid; }
 div.fastgrowth      { background-color: #7b1fa2; text-align: right; border-left-style: solid; }
 
-/* Existing styles remain unchanged below */
+/* Existing styles remain unchanged below from 8values*/
 
   /* Typography */
   h1 {
