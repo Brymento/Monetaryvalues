@@ -71,7 +71,72 @@
       });
     }
 
+    function animateBars() {
+  document.querySelectorAll(".bar").forEach(bar => {
+    const textWrapper = bar.querySelector(".text-wrapper");
+    const percentText = textWrapper.innerText;
+    const value = parseFloat(percentText);
+    bar.style.width = value + "%";
+    if (textWrapper.offsetWidth + 20 > bar.offsetWidth) {
+      textWrapper.style.visibility = "hidden";
+    }
+  });
+}
+
     renderResults();
+    animateBars()
   </script>
+  
+  <script>
+    window.onload = function () {
+      const c = document.createElement("canvas");
+      const ctx = c.getContext("2d");
+      c.width = 800;
+      c.height = 650;
+      ctx.fillStyle = "#EEEEEE";
+      ctx.fillRect(0, 0, 800, 650);
+    
+      let yOffset = 170;
+      axisInfo.forEach(({ key, right, label }, index) => {
+        const leftVal = parseFloat(getQueryVariable(key)).toFixed(1);
+        const rightVal = (100 - leftVal).toFixed(1);
+    
+        const leftImg = document.querySelector(`img[src="value_images/${key}.svg"]`);
+        const rightImg = document.querySelector(`img[src="value_images/${right}.svg"]`);
+    
+        ctx.drawImage(leftImg, 20, yOffset, 100, 100);
+        ctx.drawImage(rightImg, 680, yOffset, 100, 100);
+    
+        ctx.fillStyle = "#222222";
+        ctx.fillRect(120, yOffset + 10, 560, 80);
+    
+        const barLengthL = 5.6 * leftVal - 2;
+        const barLengthR = 5.6 * rightVal - 2;
+    
+        ctx.fillStyle = "#f44336"; // Customize per axis
+        ctx.fillRect(120, yOffset + 14, barLengthL, 72);
+        ctx.fillStyle = "#00897b";
+        ctx.fillRect(682 - barLengthR, yOffset + 14, barLengthR, 72);
+    
+        ctx.fillStyle = "#222222";
+        ctx.font = "700 40px Montserrat";
+        ctx.fillText(`${leftVal}%`, 130, yOffset + 60);
+        ctx.textAlign = "right";
+        ctx.fillText(`${rightVal}%`, 670, yOffset + 60);
+        ctx.textAlign = "left";
+    
+        yOffset += 120;
+      });
+    
+      ctx.font = "700 60px Montserrat";
+      ctx.fillText("MonetaryValues", 20, 90);
+      ctx.font = "300 30px Montserrat";
+      ctx.textAlign = "right";
+      ctx.fillText("monetaryvalues.github.io", 780, 60);
+    
+      document.getElementById("banner").src = c.toDataURL();
+    };
+    </script>
+    
 </body>
 </html>
