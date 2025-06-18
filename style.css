@@ -221,25 +221,25 @@ div.text-wrapper {
   display: inline-block;
 }
 /* Axis Bar Colours */
-div.control         { background-color: #2c2ca0; text-align: left; border-right-style: solid; }
+div.col         { background-color: #2c2ca0; text-align: left; border-right-style: solid; }
 div.demand          { background-color: #c87137; text-align: right; border-left-style: solid; }
-div.equality        { background-color: #8d5fd3; text-align: left; border-right-style: solid; }
+div.equ        { background-color: #8d5fd3; text-align: left; border-right-style: solid; }
 div.opportunity     { background-color: #d4ff2a; text-align: right; border-left-style: solid; }
-div.anticonsumerism { background-color: #165016; text-align: left; border-right-style: solid; }
+div.aco { background-color: #165016; text-align: left; border-right-style: solid; }
 div.consumerism     { background-color: #aa0000; text-align: right; border-left-style: solid; }
-div.prounion        { background-color: #003380; text-align: left; border-right-style: solid; }
+div.pun        { background-color: #003380; text-align: left; border-right-style: solid; }
 div.antiunion       { background-color: #784421; text-align: right; border-left-style: solid; }
-div.regulations     { background-color: #2ca089; text-align: left; border-right-style: solid; }
+div.reg    { background-color: #2ca089; text-align: left; border-right-style: solid; }
 div.laissezfaire    { background-color: #cccccc; text-align: right; border-left-style: solid; }
-div.closed          { background-color: #501616; text-align: left; border-right-style: solid; }
+div.clo          { background-color: #501616; text-align: left; border-right-style: solid; }
 div.open            { background-color: #80b3ff; text-align: right; border-left-style: solid; }
-div.deceleration    { background-color: #442178; text-align: left; border-right-style: solid; }
+div.dec    { background-color: #442178; text-align: left; border-right-style: solid; }
 div.acceleration    { background-color: #5fd35f; text-align: right; border-left-style: solid; }
-div.monetary        { background-color: #ffcc00; text-align: left; border-right-style: solid; }
+div.mon       { background-color: #ffcc00; text-align: left; border-right-style: solid; }
 div.speculative     { background-color: #ffe680; text-align: right; border-left-style: solid; }
-div.tributary       { background-color: #6c5353; text-align: left; border-right-style: solid; }
-div.minarchism      { background-color: #5fd38d; text-align: right; border-left-style: solid; }
-div.slowgrowth      { background-color: #668000; text-align: left; border-right-style: solid; }
+div.tri       { background-color: #6c5353; text-align: left; border-right-style: solid; }
+div.minarchy      { background-color: #5fd38d; text-align: right; border-left-style: solid; }
+div.sgr      { background-color: #668000; text-align: left; border-right-style: solid; }
 div.fastgrowth      { background-color: #d40000; text-align: right; border-left-style: solid; }
 span.weight-300 {
   font-weight: 300;

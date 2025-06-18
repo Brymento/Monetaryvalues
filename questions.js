@@ -2,7 +2,7 @@
 
 
 const variableMap = [
-    "con",   // 0
+    "col",   // 0
     "equ",   // 1
     "aco",   // 2
     "pun",   // 3
