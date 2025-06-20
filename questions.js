@@ -223,7 +223,158 @@ const variableMap = [
           q: "Currency exchange should be completely free, without artificial floors or ceilings that distort its true value.",
           e: [[5, -1], [7, -1]]
       },
+      {
+        q: "Establishing low-tax zones will attract investors and stimulate economic growth, we should establish some.",
+        e: [[5, -1], [8, -1]]
+    },
+    {
+        q: "Open borders bring significant economic benefits, and therefore, they should stay open to everyone.",
+        e: [[5, -1], [9, -1]]
+    },
+    {
+        q: "Innovation has merely created a cycle of new problems and temporary fixes, without producing anything truly beneficial in the long term.",
+        e: [[6, 1], [0, 1]]
+    },
+    {
+        q: "Automation should never replace human jobs under any circumstance, as every person has the fundamental right to work.",
+        e: [[6, 1], [1, 1]]
+    },
+    {
+        q: "Technological progress is a source of moral decay that needs to be stopped.",
+        e: [[6, 1], [2, 1]]
+    },
+    {
+        q: "Technology has consistently undermined workers, from machines to electronics, automation, and now AI. Proving it stands in opposition to the worker.",
+        e: [[6, 1], [3, 1]]
+    },
+    {
+        q: "Innovation will not rescue liberal economic theories; eventually, they will reach their limits and be forced to confront their failures.",
+        e: [[6, 1], [4, 1]]
+      },
+      {
+        q: "We should return to Mercantilism and Manorialism, as they were better systems than the ones we have today.",
+        e: [[6, 1], [5, 1]]
+      },
+      {
+        q: "With AI enabling accurate prediction of market fluctuations, currency should be entirely left to market forces.",
+        e: [[6, -1], [7, -1]]
+      },
+      {
+          q: "We should work toward a future completely free of taxation to maximize individual freedom and economic efficiency.",
+          e: [[6, -1], [8, -1]]
+      },
+      {
+          q: "Technological growth drives economic growth, and stalling it serves no purpose other than to appease superstitions.",
+          e: [[6, -1], [9, -1]]
+      },
+      {
+          q: "We should reinstate the gold standard to give our currency real, tangible value instead of relying on speculative worth.",
+          e: [[7, 1], [0, 1]]
+      },
+      {
+          q: "Cryptocurrency is a passing fad, and it will soon become clear that basing currency on speculation is a unsustainable idea.",
+          e: [[7, 1], [1, 1]]
+      },
+      {
+          q: "Interest rates should be increased to encourage saving over mindless spending.",
+          e: [[7, 1], [2, 1]]
+      },
+      {
+          q: "The worth of our currency is not a commodity, it must be safeguarded by the state to ensure the economic security of our country.",
+          e: [[7, 1], [3, 1]]
+      },
+      {
+          q: "Foreign exchange rates should be fixed and stable to provide consistent security for both importers and exporters.",
+          e: [[7, 1], [4, 1]]
+      },
+      {
+          q: "We must preserve our national sovereignty and actively protect the value of our currency from external and internal ",
+          e: [[7, 1], [5, 1]]
+      },
+      {
+          q: "Oatmeal was a better currency because it had tangible, intrinsic value unlike today’s fiat money.",
+          e: [[7, 1], [6, 1]]
+      },
+      {
+          q: "Inflation is more difficult to manage under a fixed currency system; therefore, the system should be abolished as soon as possible.",
+          e: [[7, -1], [8, -1]]
+      },
+      {
+          q: "We must allow the market to control the currency so it can naturally regain its lost value.",
+          e: [[7, -1], [9, -1]]
+      },
+      {
+          q: "Higher corporate taxes are necessary to prevent economic overheating; production should be limited to what is necessary.",
+          e: [[8, 1], [0, 1]]
+      },
+      {
+          q: "Progressive taxation is the ideal system, ensuring the wealthy pay their fair share while relieving the financial burden on those who are struggling.",
+          e: [[8, 1], [1, 1]]
+      },
+      {
+          q: "Unhealthy and unsustainable lifestyles should be taxed, as those who choose to be a burden must bear the financial responsibility.",
+          e: [[8, 1], [2, 1]]
+      },
+      {
+          q: "Capitalists should contribute their fair share to society by paying appropriate taxes on their wealth and profits.",
+          e: [[8, 1], [3, 1]]
+      },
+      {
+          q: "Taxation serves as a safeguard against elite wealth hoarding, and therefore it should be increased to ensure economic fairness.",
+          e: [[8, 1], [4, 1]]
+      },
+      {
+          q: "We should implement heavy tariffs to protect and subsidize our domestic industries, ensuring national economic strength and self-reliance.",
+          e: [[8, 1], [5, 1]]
+      },
+      {
+          q: "The elite exploit technology to evade paying their fair share in taxes, and this practice must be stopped at all costs.",
+          e: [[8, 1], [6, 1]]
+      },
+      {
+          q: "A regulated currency enables the government to function efficiently, leading to improved living standards for the population.",
+          e: [[8, 1], [7, 1]]
+      },
+      {
+          q: "Taxation reduces overall GDP, so it should be eliminated to maximize economic growth and productivity.",
+          e: [[8, -1], [9, -1]]
+      },
+      {
+          q: "We don't need an 'efficient' economy,we need a safe and secure one that serves the common man, rather than the ultra-rich.",
+          e: [[9, 1], [0, 1]]
+      },
+      {
+          q: "The global economy operates as a zero-sum game, no one gains wealth without it coming at someone else's expense.",
+          e: [[9, 1], [1, 1]]
+      },
+      {
+          q: "GDP growth is meaningless if it comes at the cost of losing our core values and principles.",
+          e: [[9, 1], [2, 1]]
+      },
+      {
+        q: "I would choose socialism over a 5% increase in GDP, because economic numbers are meaningless if they come at the cost of our dignity.",
+        e: [[9, 1], [3, 1]]
+    },
+    {
+        q: "Allowing merchants to operate without restraint is a dangerous idea, regardless of any potential economic benefits.",
+        e: [[9, 1], [4, 1]]
+    },
+    {
+        q: "The border should be closed entirely; our economy exists to serve our own citizens, not foreign interests.",
+        e: [[9, 1], [5, 1]]
+    },
 
-
+    {
+        q: "We should approach technology with caution and carefully consider its long-term effects on the economy.",
+        e: [[9, 1], [6, 1]]
+    },
+    {
+        q: "Fixed exchange rates would help stabilize economic cycles, providing consistency that supports small businesses unable to survive recessions.",
+        e: [[9, 1], [7, 1]]
+    },
+    {
+        q: "Fixed exchange rates would help stabilize economic cycles, providing consistency that supports small businesses unable to survive recessions.",
+        e: [[9, 1], [8, 1]]
+    },
   ];
   
