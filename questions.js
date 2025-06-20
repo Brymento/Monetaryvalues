@@ -53,7 +53,7 @@ const variableMap = [
     },
     {
         q: "Free enterprise is an illusion, as monopolies prevent true competition from appearing.",
-        e: [[1, -1], [0, -1]]
+        e: [[1, 1], [0, 1]]
     },
     {
         q: "Credit is a reliable tool for overcoming financial difficulties and should be utilized when necessary.",
