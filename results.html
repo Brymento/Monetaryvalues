@@ -62,59 +62,7 @@
       `;
     }
 
-    
-const labelArrays = {
-  col: ["Planned Economy", "Command Economy", "Social Economy", "Mixed Economy", "Market Economy", "Free market economy", "Libertine Economy"],
-  equ: ["Egalitarianism", "Welfare State", "Social Democracy", "Balanced", "Meritocracy", "Classical Liberalism", "Neoliberalism"],
-  aco: ["Degrowth", "Simple Living", "Frugality", "Ethical Consumerism", "Consumer Sovereignty", "Hyperconsumerism", "Hedonism"],
-  pun: ["Syndicalism", "Collective Bargaining", "Reformist", "Cooperative Economics", "Collaborationist", "Right-to-Work", "Union Busting"],
-  reg: ["Dirigisme", "Heavy Regulation", "Keynesianism", "Mixed Economy", "Neoclassical Economics", "Classical Economics", "Free Market Fundamentalism"],
-  clo: ["Autarky", "Protectionism", "Wary", "Fair Trade", "Free Trade", "Internationalism", "Globalism"],
-  dec: ["Post-Growth", "Sustainable Growth", "Developmentalism", "Adaptive", "Enthusiasm", "Growth Maximization", "Techno-Accelerationism"],
-  mon: ["Hard Money", "Protected Money", "Regulated Money", "Intervened Money", "Speculative Finance", "Financialization", "Crypto-Anarchism"],
-  tri: ["State Slavery", "Redistributionist Taxation", "Progressive Taxation", "Flat Tax", "Low Taxation", "Libertarianism", "Minarchism"],
-  sgr: ["Steady-State Economy", "Sustainable Growth", "Marginalist Growth", "Boom-Bust Economy", "Market-Driven Growth", "Expansionism", "Hypercapitalism"]
-};
-
-const barColors = {
-  col: ["#2c2ca0", "#c87137"],
-  equ: ["#8d5fd3", "#d4ff2a"],
-  aco: ["#165016", "#aa0000"],
-  pun: ["#003380", "#784421"],
-  reg: ["#2ca089", "#cccccc"],
-  clo: ["#501616", "#80b3ff"],
-  dec: ["#442178", "#5fd35f"],
-  mon: ["#ffcc00", "#ffe680"],
-  tri: ["#6c5353", "#5fd38d"],
-  sgr: ["#668000", "#d40000"]
-};
-
-function getLabel(value, labels) {
-  if (value > 100) return "";
-  if (value > 90) return labels[0];
-  if (value > 75) return labels[1];
-  if (value > 60) return labels[2];
-  if (value >= 40) return labels[3];
-  if (value >= 25) return labels[4];
-  if (value >= 10) return labels[5];
-  return labels[6];
-}
-
-function createAxisBar(leftKey, rightKey, label, leftVal, rightVal) {
-  const labelText = getLabel(leftVal, labelArrays[leftKey]);
-  return `
-    <h2>${label}: <span class="weight-300">${leftVal}% / ${rightVal}%</span> — <span class="weight-300">${labelText}</span></h2>
-    <div class="axis">
-      <img id="img-${leftKey}" src="value_images/${leftKey}.svg" height="128pt">
-      <div class="bar ${leftKey}" id="bar-${leftKey}"><div class="text-wrapper">${leftVal}%</div></div>
-      <div class="bar ${rightKey}" id="bar-${rightKey}"><div class="text-wrapper">${rightVal}%</div></div>
-      <img id="img-${rightKey}" src="value_images/${right}.svg" height="128pt">
-    </div>
-  `;
-}
-
-
-function renderResults() {
+    function renderResults() {
       const container = document.getElementById("results-section");
       axisInfo.forEach(({ key, right, label }) => {
         const leftVal = getQueryVariable(key);
@@ -190,52 +138,5 @@ function renderResults() {
     };
     </script>
     
-<script>
-setTimeout(() => {
-  const c = document.createElement("canvas");
-  const ctx = c.getContext("2d");
-  c.width = 800;
-  c.height = 650;
-  ctx.fillStyle = "#EEEEEE";
-  ctx.fillRect(0, 0, 800, 650);
-
-  let yOffset = 170;
-  axisInfo.forEach(({ key, right }) => {
-    const leftVal = parseFloat(getQueryVariable(key)).toFixed(1);
-    const rightVal = (100 - leftVal).toFixed(1);
-
-    const leftImg = document.getElementById("img-" + key);
-    const rightImg = document.getElementById("img-" + right);
-
-    ctx.drawImage(leftImg, 20, yOffset, 100, 100);
-    ctx.drawImage(rightImg, 680, yOffset, 100, 100);
-
-    ctx.fillStyle = "#222222";
-    ctx.fillRect(120, yOffset + 10, 560, 80);
-
-    ctx.fillStyle = barColors[key][0];
-    ctx.fillRect(120, yOffset + 14, 5.6 * leftVal - 2, 72);
-    ctx.fillStyle = barColors[key][1];
-    ctx.fillRect(682 - 5.6 * rightVal, yOffset + 14, 5.6 * rightVal - 2, 72);
-
-    ctx.fillStyle = "#222222";
-    ctx.font = "700 40px Montserrat";
-    ctx.fillText(`${leftVal}%`, 130, yOffset + 60);
-    ctx.textAlign = "right";
-    ctx.fillText(`${rightVal}%`, 670, yOffset + 60);
-    ctx.textAlign = "left";
-
-    yOffset += 120;
-  });
-
-  ctx.font = "700 60px Montserrat";
-  ctx.fillText("MonetaryValues", 20, 90);
-  ctx.font = "300 30px Montserrat";
-  ctx.textAlign = "right";
-  ctx.fillText("monetaryvalues.github.io", 780, 60);
-
-  document.getElementById("banner").src = c.toDataURL();
-}, 200);
-</script>
 </body>
 </html>
