@@ -28,6 +28,40 @@
 
   <!-- Script: Utility functions and rendering -->
   <script>
+    const axisInfo = [
+      { key: "col",       right: "demand",        label: "Direction" },
+      { key: "equ",      right: "opportunity",   label: "Meritocracy" },
+      { key: "aco", right: "consumerism", label: "Consumerism" },
+      { key: "pun",      right: "antiunion",     label: "Union Support" },
+      { key: "reg",   right: "laissezfaire",  label: "Liberalism" },
+      { key: "clo",        right: "open",          label: "Internationalism" },
+      { key: "dec",  right: "acceleration",  label: "Technological" },
+      { key: "mon",      right: "speculative",   label: "Speculation" },
+      { key: "tri",     right: "minarchy",    label: "Taxation" },
+      { key: "sgr",    right: "fastgrowth",    label: "Development" },
+    ];
+
+    function getQueryVariable(variable) {
+      const vars = window.location.search.substring(1).split("&");
+      for (const v of vars) {
+        const [key, val] = v.split("=");
+        if (key === variable) return parseFloat(val);
+      }
+      return NaN;
+    }
+
+    function createAxisBar(leftKey, rightKey, label, leftVal, rightVal) {
+      return `
+        <h2>${label}: <span class="weight-300">${leftVal}% / ${rightVal}%</span></h2>
+        <div class="axis">
+          <img src="value_images/${leftKey}.svg" height="128pt">
+          <div class="bar ${leftKey}" id="bar-${leftKey}"><div class="text-wrapper">${leftVal}%</div></div>
+          <div class="bar ${rightKey}" id="bar-${rightKey}"><div class="text-wrapper">${rightVal}%</div></div>
+          <img src="value_images/${rightKey}.svg" height="128pt">
+        </div>
+      `;
+    }
+
     
 const labelArrays = {
   col: ["Control/Planned Economy", "Command Economy", "Social Economy", "Mixed Economy", "Market Economy", "Free market economy", "Libertine Economy"],
@@ -66,41 +100,19 @@ function getLabel(value, labels) {
   return labels[6];
 }
 
-const axisInfo = [
-      { key: "col",       right: "demand",        label: "Direction" },
-      { key: "equ",      right: "opportunity",   label: "Meritocracy" },
-      { key: "aco", right: "consumerism", label: "Consumerism" },
-      { key: "pun",      right: "antiunion",     label: "Union Support" },
-      { key: "reg",   right: "laissezfaire",  label: "Liberalism" },
-      { key: "clo",        right: "open",          label: "Internationalism" },
-      { key: "dec",  right: "acceleration",  label: "Technological" },
-      { key: "mon",      right: "speculative",   label: "Speculation" },
-      { key: "tri",     right: "minarchy",    label: "Taxation" },
-      { key: "sgr",    right: "fastgrowth",    label: "Development" },
-    ];
-
-    function getQueryVariable(variable) {
-      const vars = window.location.search.substring(1).split("&");
-      for (const v of vars) {
-        const [key, val] = v.split("=");
-        if (key === variable) return parseFloat(val);
-      }
-      return NaN;
-    }
-
-    
 function createAxisBar(leftKey, rightKey, label, leftVal, rightVal) {
   const labelText = getLabel(leftVal, labelArrays[leftKey]);
   return `
     <h2>${label}: <span class="weight-300">${leftVal}% / ${rightVal}%</span> — <span class="weight-300">${labelText}</span></h2>
     <div class="axis">
-      <img src="value_images/${leftKey}.svg" height="128pt">
+      <img id="img-${leftKey}" src="value_images/${leftKey}.svg" height="128pt">
       <div class="bar ${leftKey}" id="bar-${leftKey}"><div class="text-wrapper">${leftVal}%</div></div>
       <div class="bar ${rightKey}" id="bar-${rightKey}"><div class="text-wrapper">${rightVal}%</div></div>
-      <img src="value_images/${right}.svg" height="128pt">
+      <img id="img-${rightKey}" src="value_images/${right}.svg" height="128pt">
     </div>
   `;
 }
+
 
 function renderResults() {
       const container = document.getElementById("results-section");
@@ -153,12 +165,19 @@ function renderResults() {
         const barLengthL = 5.6 * leftVal - 2;
         const barLengthR = 5.6 * rightVal - 2;
     
-        
-        ctx.fillStyle = barColors[key][0];
-        ctx.fillRect(120, yOffset + 14, 5.6 * leftVal - 2, 72);
-        ctx.fillStyle = barColors[key][1];
-        ctx.fillRect(682 - 5.6 * rightVal, yOffset + 14, 5.6 * rightVal - 2, 72);
-yOffset += 120;
+        ctx.fillStyle = "#f44336"; // Customize per axis
+        ctx.fillRect(120, yOffset + 14, barLengthL, 72);
+        ctx.fillStyle = "#00897b";
+        ctx.fillRect(682 - barLengthR, yOffset + 14, barLengthR, 72);
+    
+        ctx.fillStyle = "#222222";
+        ctx.font = "700 40px Montserrat";
+        ctx.fillText(`${leftVal}%`, 130, yOffset + 60);
+        ctx.textAlign = "right";
+        ctx.fillText(`${rightVal}%`, 670, yOffset + 60);
+        ctx.textAlign = "left";
+    
+        yOffset += 120;
       });
     
       ctx.font = "700 60px Montserrat";
@@ -171,5 +190,52 @@ yOffset += 120;
     };
     </script>
     
+<script>
+setTimeout(() => {
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d");
+  c.width = 800;
+  c.height = 650;
+  ctx.fillStyle = "#EEEEEE";
+  ctx.fillRect(0, 0, 800, 650);
+
+  let yOffset = 170;
+  axisInfo.forEach(({ key, right }) => {
+    const leftVal = parseFloat(getQueryVariable(key)).toFixed(1);
+    const rightVal = (100 - leftVal).toFixed(1);
+
+    const leftImg = document.getElementById("img-" + key);
+    const rightImg = document.getElementById("img-" + right);
+
+    ctx.drawImage(leftImg, 20, yOffset, 100, 100);
+    ctx.drawImage(rightImg, 680, yOffset, 100, 100);
+
+    ctx.fillStyle = "#222222";
+    ctx.fillRect(120, yOffset + 10, 560, 80);
+
+    ctx.fillStyle = barColors[key][0];
+    ctx.fillRect(120, yOffset + 14, 5.6 * leftVal - 2, 72);
+    ctx.fillStyle = barColors[key][1];
+    ctx.fillRect(682 - 5.6 * rightVal, yOffset + 14, 5.6 * rightVal - 2, 72);
+
+    ctx.fillStyle = "#222222";
+    ctx.font = "700 40px Montserrat";
+    ctx.fillText(`${leftVal}%`, 130, yOffset + 60);
+    ctx.textAlign = "right";
+    ctx.fillText(`${rightVal}%`, 670, yOffset + 60);
+    ctx.textAlign = "left";
+
+    yOffset += 120;
+  });
+
+  ctx.font = "700 60px Montserrat";
+  ctx.fillText("MonetaryValues", 20, 90);
+  ctx.font = "300 30px Montserrat";
+  ctx.textAlign = "right";
+  ctx.fillText("monetaryvalues.github.io", 780, 60);
+
+  document.getElementById("banner").src = c.toDataURL();
+}, 200);
+</script>
 </body>
 </html>
