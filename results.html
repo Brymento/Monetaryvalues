@@ -28,12 +28,33 @@
 
   <!-- Script: Utility functions and rendering -->
   <script>
-    
+    const axisInfo = [
+      { key: "col",       right: "demand",        label: "Direction" },
+      { key: "equ",      right: "opportunity",   label: "Meritocracy" },
+      { key: "aco", right: "consumerism", label: "Consumerism" },
+      { key: "pun",      right: "antiunion",     label: "Union Support" },
+      { key: "reg",   right: "laissezfaire",  label: "Liberalism" },
+      { key: "clo",        right: "open",          label: "Internationalism" },
+      { key: "dec",  right: "acceleration",  label: "Technological" },
+      { key: "mon",      right: "speculative",   label: "Speculation" },
+      { key: "tri",     right: "minarchy",    label: "Taxation" },
+      { key: "sgr",    right: "fastgrowth",    label: "Development" },
+    ];
+
+    function getQueryVariable(variable) {
+      const vars = window.location.search.substring(1).split("&");
+      for (const v of vars) {
+        const [key, val] = v.split("=");
+        if (key === variable) return parseFloat(val);
+      }
+      return NaN;
+    }
+
 const labelArrays = {
-  col: ["Control/Planned Economy", "Command Economy", "Social Economy", "Mixed Economy", "Market Economy", "Free market economy", "Libertine Economy"],
-  equ: ["Equality/Egalitarianism", "Welfare State", "Social Democracy", "Balanced", "Meritocracy", "Classical Liberalism", "Neoliberalism"],
-  aco: ["Anticonsumerism/Degrowth", "Simple Living", "Frugality", "Ethical Consumerism", "Consumer Sovereignty", "Hyperconsumerism", "Hedonism"],
-  pun: ["Pro-union/Syndicalism", "Collective Bargaining", "Reformist", "Cooperative Economics", "Collaborationist", "\"Right-to-Work\"", "Union Busting"],
+  col: ["Planned Economy", "Command Economy", "Social Economy", "Mixed Economy", "Market Economy", "Free market economy", "Libertine Economy"],
+  equ: ["Egalitarianism", "Welfare State", "Social Democracy", "Balanced", "Meritocracy", "Classical Liberalism", "Neoliberalism"],
+  aco: ["Degrowth", "Simple Living", "Frugality", "Ethical Consumerism", "Consumer Sovereignty", "Hyperconsumerism", "Hedonism"],
+  pun: ["Syndicalism", "Collective Bargaining", "Reformist", "Cooperative Economics", "Collaborationist", "Right-to-Work", "Union Busting"],
   reg: ["Dirigisme", "Heavy Regulation", "Keynesianism", "Mixed Economy", "Neoclassical Economics", "Classical Economics", "Free Market Fundamentalism"],
   clo: ["Autarky", "Protectionism", "Wary", "Fair Trade", "Free Trade", "Internationalism", "Globalism"],
   dec: ["Post-Growth", "Sustainable Growth", "Developmentalism", "Adaptive", "Enthusiasm", "Growth Maximization", "Techno-Accelerationism"],
@@ -65,29 +86,6 @@ function getLabel(value, labels) {
   if (value >= 10) return labels[5];
   return labels[6];
 }
-
-const axisInfo = [
-      { key: "col",       right: "demand",        label: "Direction" },
-      { key: "equ",      right: "opportunity",   label: "Meritocracy" },
-      { key: "aco", right: "consumerism", label: "Consumerism" },
-      { key: "pun",      right: "antiunion",     label: "Union Support" },
-      { key: "reg",   right: "laissezfaire",  label: "Liberalism" },
-      { key: "clo",        right: "open",          label: "Internationalism" },
-      { key: "dec",  right: "acceleration",  label: "Technological" },
-      { key: "mon",      right: "speculative",   label: "Speculation" },
-      { key: "tri",     right: "minarchy",    label: "Taxation" },
-      { key: "sgr",    right: "fastgrowth",    label: "Development" },
-    ];
-
-    function getQueryVariable(variable) {
-      const vars = window.location.search.substring(1).split("&");
-      for (const v of vars) {
-        const [key, val] = v.split("=");
-        if (key === variable) return parseFloat(val);
-      }
-      return NaN;
-    }
-
     
 function createAxisBar(leftKey, rightKey, label, leftVal, rightVal) {
   const labelText = getLabel(leftVal, labelArrays[leftKey]);
