@@ -288,7 +288,7 @@ const variableMap = [
           e: [[7, 1], [4, 1]]
       },
       {
-          q: "We must preserve our national sovereignty and actively protect the value of our currency from external and internal ",
+          q: "We must preserve our national sovereignty and actively protect the value of our currency from external and internal threats.",
           e: [[7, 1], [5, 1]]
       },
       {
@@ -373,7 +373,7 @@ const variableMap = [
         e: [[9, 1], [7, 1]]
     },
     {
-        q: "Fixed exchange rates would help stabilize economic cycles, providing consistency that supports small businesses unable to survive recessions.",
+        q: "Subsidies should be implemented alongside taxation to mitigate the negative effects of economic cycles and protect vulnerable businesses.",
         e: [[9, 1], [8, 1]]
     },
   ];
