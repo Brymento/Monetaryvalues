@@ -14,6 +14,14 @@ body {
   border-right-style: solid;
   border-width: 20px;
 }
+@media (max-width: 768px) {
+  body {
+    width: 100%;
+    padding: 1em;
+    border-left: none;
+    border-right: none;
+  }
+}
 p {
   color: #444444;
   font-family: 'Times New Roman', Times, serif;
@@ -42,8 +50,8 @@ p.question {
   color: #333333;
   font-family: 'Times New Roman', Times, serif;
   font-weight: normal;
-  width: 70%;
-  min-width: 500pt;
+  width: 90%;
+  max-width: 800px;
   min-height: 144pt;
   background-color: #eeeeee;
   padding: 16pt;
@@ -85,8 +93,8 @@ div.center {
   border-radius: 8pt;
   padding: 6pt;
   color: white;
-  width: 80%;
-  min-width: 488pt;
+  width: 90%;
+  max-width: 600px;
   text-align: center;
   text-decoration: none;
   display: block;
@@ -112,6 +120,8 @@ div.axis_name {
 }
 .spacer {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .spacer > div {
   margin-top: 10px;
@@ -125,8 +135,8 @@ div.axis_name {
   border-radius: 8pt;
   color: white;
   padding: 8pt;
-  width: 50%;
-  min-width: 500pt;
+  width: 90%;
+  max-width: 500px;
   text-align: center;
   text-decoration: none;
   display: block;
@@ -152,8 +162,8 @@ div.axis_name {
   border-radius: 8pt;
   color: white;
   padding: 8pt;
-  width: 10%;
-  min-width: 100pt;
+  width: 60%;
+  max-width: 200px;
   text-align: center;
   text-decoration: none;
   display: block;
@@ -175,21 +185,14 @@ div.axis_name {
   width: 60%;
   height: auto;
 }
-div.explanation_blurb_left {
-  vertical-align: top;
-  width: 37%;
-  margin-left: 1%;
-  margin-right: 1%;
-}
+div.explanation_blurb_left,
 div.explanation_blurb_right {
-  vertical-align: top;
-  width: 37%;
-  margin-left: 1%;
-  margin-right: 1%;
+  width: 45%;
+  margin: 1%;
 }
 div.explanation_axis {
-  width: 20.9%;
-  vertical-align: top;
+  width: 10%;
+  text-align: center;
 }
 div.axis {
   width: 100%;
@@ -210,7 +213,10 @@ div.bar {
   border-color: #222222;
   background-color: #eeeeee;
   display: block;
-  width: 50%;
+  width: 90%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 div.text-wrapper {
   font-family: 'Times New Roman', Times, serif;
@@ -219,27 +225,27 @@ div.text-wrapper {
   color: #222222;
   display: inline-block;
 }
- /* Axis Bar Colours */
- div.col         { background-color: #2c2ca0; text-align: left; border-right-style: solid; }
- div.demand          { background-color: #c87137; text-align: right; border-left-style: solid; }
- div.equ        { background-color: #8d5fd3; text-align: left; border-right-style: solid; }
- div.opportunity     { background-color: #d4ff2a; text-align: right; border-left-style: solid; }
- div.aco { background-color: #165016; text-align: left; border-right-style: solid; }
- div.consumerism     { background-color: #aa0000; text-align: right; border-left-style: solid; }
- div.pun        { background-color: #003380; text-align: left; border-right-style: solid; }
- div.antiunion       { background-color: #784421; text-align: right; border-left-style: solid; }
- div.reg    { background-color: #2ca089; text-align: left; border-right-style: solid; }
- div.laissezfaire    { background-color: #cccccc; text-align: right; border-left-style: solid; }
- div.clo          { background-color: #501616; text-align: left; border-right-style: solid; }
- div.open            { background-color: #80b3ff; text-align: right; border-left-style: solid; }
- div.dec    { background-color: #442178; text-align: left; border-right-style: solid; }
- div.acceleration    { background-color: #5fd35f; text-align: right; border-left-style: solid; }
- div.mon       { background-color: #ffcc00; text-align: left; border-right-style: solid; }
- div.speculative     { background-color: #ffe680; text-align: right; border-left-style: solid; }
- div.tri       { background-color: #6c5353; text-align: left; border-right-style: solid; }
- div.minarchy      { background-color: #5fd38d; text-align: right; border-left-style: solid; }
- div.sgr      { background-color: #668000; text-align: left; border-right-style: solid; }
- div.fastgrowth      { background-color: #d40000; text-align: right; border-left-style: solid; }
+/* Axis Bar Colours */
+div.col         { background-color: #2c2ca0; text-align: left; border-right-style: solid; }
+div.demand          { background-color: #c87137; text-align: right; border-left-style: solid; }
+div.equ        { background-color: #8d5fd3; text-align: left; border-right-style: solid; }
+div.opportunity     { background-color: #d4ff2a; text-align: right; border-left-style: solid; }
+div.aco { background-color: #165016; text-align: left; border-right-style: solid; }
+div.consumerism     { background-color: #aa0000; text-align: right; border-left-style: solid; }
+div.pun        { background-color: #003380; text-align: left; border-right-style: solid; }
+div.antiunion       { background-color: #784421; text-align: right; border-left-style: solid; }
+div.reg    { background-color: #2ca089; text-align: left; border-right-style: solid; }
+div.laissezfaire    { background-color: #cccccc; text-align: right; border-left-style: solid; }
+div.clo          { background-color: #501616; text-align: left; border-right-style: solid; }
+div.open            { background-color: #80b3ff; text-align: right; border-left-style: solid; }
+div.dec    { background-color: #442178; text-align: left; border-right-style: solid; }
+div.acceleration    { background-color: #5fd35f; text-align: right; border-left-style: solid; }
+div.mon       { background-color: #ffcc00; text-align: left; border-right-style: solid; }
+div.speculative     { background-color: #ffe680; text-align: right; border-left-style: solid; }
+div.tri       { background-color: #6c5353; text-align: left; border-right-style: solid; }
+div.minarchy      { background-color: #5fd38d; text-align: right; border-left-style: solid; }
+div.sgr      { background-color: #668000; text-align: left; border-right-style: solid; }
+div.fastgrowth      { background-color: #d40000; text-align: right; border-left-style: solid; }
 span.weight-300 {
   font-weight: 300;
 }
@@ -263,24 +269,11 @@ span.weight-300 {
   h2 { font-size: 2rem; }
   .button {
     font-size: 1.25rem;
-    width: 90%;
-    min-width: auto;
-  }
-  .spacer {
-    flex-direction: column;
-    align-items: center;
   }
   p.question {
     font-size: 1.25rem;
-    width: 90%;
-    min-width: auto;
-  }
-  div.center {
-    width: 90%;
-    min-width: auto;
   }
   .small_button {
-    width: 60%;
-    min-width: auto;
+    font-size: 1rem;
   }
 }
