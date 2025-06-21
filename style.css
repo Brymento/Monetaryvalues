@@ -38,7 +38,7 @@ p.value {
   margin-bottom: 22px;
   text-indent: -16pt;
   margin-left: 20pt;
-  font-size: 24pt;
+  font-size: 20pt;
   line-height: 2.11666656px;
   letter-spacing: 0.03em;
 }
@@ -194,7 +194,7 @@ div.axis_name {
 div.explanation_blurb_left,
 div.explanation_blurb_right {
   vertical-align: top;
-  width: 35%;
+  width: 30%;
   margin-left: 1%;
   margin-right: 1%;
 }
