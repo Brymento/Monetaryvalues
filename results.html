@@ -29,16 +29,16 @@
   <!-- Script: Utility functions and rendering -->
   <script>
     const axisInfo = [
-      { key: "col",       right: "demand",        label: "Direction" },
-      { key: "equ",      right: "opportunity",   label: "Meritocracy" },
+      { key: "col", right: "demand", label: "Direction" },
+      { key: "equ", right: "opportunity", label: "Meritocracy" },
       { key: "aco", right: "consumerism", label: "Consumerism" },
-      { key: "pun",      right: "antiunion",     label: "Union Support" },
-      { key: "reg",   right: "laissezfaire",  label: "Liberalism" },
-      { key: "clo",        right: "open",          label: "Internationalism" },
-      { key: "dec",  right: "acceleration",  label: "Technological" },
-      { key: "mon",      right: "speculative",   label: "Speculation" },
-      { key: "tri",     right: "minarchy",    label: "Taxation" },
-      { key: "sgr",    right: "fastgrowth",    label: "Development" },
+      { key: "pun", right: "antiunion", label: "Union Support" },
+      { key: "reg", right: "laissezfaire", label: "Liberalism" },
+      { key: "clo", right: "open", label: "Internationalism" },
+      { key: "dec", right: "acceleration", label: "Technological" },
+      { key: "mon", right: "speculative", label: "Speculation" },
+      { key: "tri", right: "minarchy", label: "Taxation" },
+      { key: "sgr", right: "fastgrowth", label: "Development" },
     ];
 
     function getQueryVariable(variable) {
@@ -92,12 +92,28 @@
       const c = document.createElement("canvas");
       const ctx = c.getContext("2d");
       c.width = 800;
-      c.height = 650;
+      c.height = 2600;
       ctx.fillStyle = "#EEEEEE";
-      ctx.fillRect(0, 0, 800, 650);
+      ctx.fillRect(0, 0, c.width, c.height);
+    
+      // Define  axes with their corresponding key, right-side key, label, and colors as seen above
+      const axisInfo = [
+        { key: "col", right: "demand", colorL: "#2c2ca0", colorR: "#c87137" },
+        { key: "equ", right: "opportunity", colorL: "#8d5fd3", colorR: "#d4ff2a" },
+        { key: "aco", right: "consumerism", colorL: "#165016", colorR: "#aa0000" },
+        { key: "pun", right: "antiunion", colorL: "#003380", colorR: "#784421" },
+        { key: "reg", right: "laissezfaire", colorL: "#2ca089", colorR: "#cccccc" },
+        { key: "clo", right: "open", colorL: "#501616", colorR: "#80b3ff" },
+        { key: "dec", right: "acceleration", colorL: "#442178", colorR: "#5fd35f" },
+        { key: "mon", right: "speculative", colorL: "#ffcc00", colorR: "#ffe680" },
+        { key: "tri", right: "minarchy", colorL: "#6c5353", colorR: "#5fd38d" },
+        { key: "sgr", right: "fastgrowth", colorL: "#668000", colorR: "#d40000" },
+
+      ];
     
       let yOffset = 170;
-      axisInfo.forEach(({ key, right, label }, index) => {
+    
+      axisInfo.forEach(({ key, right, colorL, colorR }) => {
         const leftVal = parseFloat(getQueryVariable(key)).toFixed(1);
         const rightVal = (100 - leftVal).toFixed(1);
     
@@ -113,13 +129,13 @@
         const barLengthL = 5.6 * leftVal - 2;
         const barLengthR = 5.6 * rightVal - 2;
     
-        ctx.fillStyle = "#f44336"; // Customize per axis
+        ctx.fillStyle = colorL;
         ctx.fillRect(120, yOffset + 14, barLengthL, 72);
-        ctx.fillStyle = "#00897b";
+        ctx.fillStyle = colorR;
         ctx.fillRect(682 - barLengthR, yOffset + 14, barLengthR, 72);
     
         ctx.fillStyle = "#222222";
-        ctx.font = "700 40px Montserrat";
+        ctx.font = "700 40px 'Times New Roman'";
         ctx.fillText(`${leftVal}%`, 130, yOffset + 60);
         ctx.textAlign = "right";
         ctx.fillText(`${rightVal}%`, 670, yOffset + 60);
@@ -128,14 +144,27 @@
         yOffset += 120;
       });
     
-      ctx.font = "700 60px Montserrat";
+      ctx.font = "700 60px 'Times New Roman'";
       ctx.fillText("MonetaryValues", 20, 90);
-      ctx.font = "300 30px Montserrat";
+      ctx.font = "300 15px 'Times New Roman'";
       ctx.textAlign = "right";
       ctx.fillText("monetaryvalues.github.io", 780, 60);
     
       document.getElementById("banner").src = c.toDataURL();
     };
+    
+    // Example utility for URL parsing
+    function getQueryVariable(variable) {
+      const query = window.location.search.substring(1);
+      const vars = query.split("&");
+      for (let i = 0; i < vars.length; i++) {
+        const pair = vars[i].split("=");
+        if (decodeURIComponent(pair[0]) === variable) {
+          return decodeURIComponent(pair[1]);
+        }
+      }
+      return 50; // Default to midpoint if not found
+    }
     </script>
     
 </body>

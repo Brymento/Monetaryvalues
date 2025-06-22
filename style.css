@@ -1,6 +1,6 @@
 html {
   min-width: 810px;
-  min-height: 1080px;
+  min-height: 810px;
   background-color: #bbbbbb;
   padding: 0px;
   scroll-behavior: smooth;
@@ -29,7 +29,7 @@ p.value {
   margin-bottom: 22px;
   text-indent: -16pt;
   margin-left: 20pt;
-  font-size: 24pt;
+  font-size: 1.8em;
   line-height: 2.11666656px;
   letter-spacing: 0.03em;
   font-family: 'Times New Roman', Times, serif;
@@ -38,7 +38,7 @@ p.value {
 p.axis_name {
   margin-top: 50px;
   color: #333333;
-  font-size: 19pt;
+  font-size: 14pt;
   font-family: 'Times New Roman', Times, serif;
 }
 p.question {
@@ -89,7 +89,7 @@ div.center {
   border-radius: 8pt;
   padding: 6pt;
   color: white;
-  width: 50%;
+  width: 80%;
   min-width: 488pt;
   text-align: center;
   text-decoration: none;
@@ -109,7 +109,7 @@ div.quadcolumn {
 }
 div.axis_name {
   color: #333333;
-  font-size: 19pt;
+  font-size: 0.6em;
   font-family: 'Times New Roman', Times, serif;
   display: inline-block;
   padding-bottom: 8.65pt;
