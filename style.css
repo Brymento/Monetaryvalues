@@ -14,20 +14,9 @@ body {
   border-right-style: solid;
   border-width: 20px;
 }
-@media (max-width: 768px) {
-  body {
-    width: 100%;
-    padding: 1em;
-    border-left: none;
-    border-right: none;
-  }
-}
-p, li, a, h1, h2, .button, .small_button, .small_button_off, .text-wrapper {
-  font-family: 'Times New Roman', Times, serif;
-}
-
 p {
   color: #444444;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 18.5pt;
   line-height: 1.15;
   margin: 4pt;
@@ -38,23 +27,25 @@ p.value {
   margin-bottom: 22px;
   text-indent: -16pt;
   margin-left: 20pt;
-  font-size: 20pt;
+  font-size: 24pt;
   line-height: 2.11666656px;
   letter-spacing: 0.03em;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 p.axis_name {
   margin-top: 50px;
   color: #333333;
-  font-size: 14pt;
+  font-size: 19pt;
+  font-family: 'Times New Roman', Times, serif;
 }
-
 p.question {
   margin: 16pt auto;
   color: #333333;
+  font-family: 'Times New Roman', Times, serif;
   font-weight: normal;
-  width: 90%;
-  max-width: 800px;
+  width: 70%;
+  min-width: 500pt;
   min-height: 144pt;
   background-color: #eeeeee;
   padding: 16pt;
@@ -64,83 +55,80 @@ p.question {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
 
+}
 h1 {
   color: #222222;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 72pt;
   text-align: center;
   line-height: 72pt;
   margin-top: 0pt;
   margin-bottom: 0pt;
 }
-
 h2 {
   color: #333333;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 34pt;
   line-height: 36pt;
   margin-top: 12pt;
   margin-bottom: 10pt;
 }
-
 li {
   font-size: 16pt;
   text-indent: 16pt;
 }
-
+a {
+  font-family: inherit;
+}
 div.center {
   background-color: #eeeeee;
+  font-family: 'Times New Roman', Times, serif;
   border-radius: 8pt;
   padding: 6pt;
   color: white;
-  width: 80%;
-  min-width: 300pt;
+  width: 50%;
+  min-width: 488pt;
   text-align: center;
   text-decoration: none;
   display: block;
   font-size: 24pt;
   margin: auto;
 }
-
 img.quadcolumn {
   width: 23.75%;
   transition: transform .3s;
 }
-
 img.quadcolumn:hover {
   transform: scale(1.05);
 }
-
 div.quadcolumn {
   width: 23.75%;
 }
-
 div.axis_name {
   color: #333333;
-  font-size: 12pt;
+  font-size: 19pt;
+  font-family: 'Times New Roman', Times, serif;
   display: inline-block;
   padding-bottom: 8.65pt;
 }
-
 .spacer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
-.spacer > div {
+.spacer > div{
   margin-top: 10px;
   display: inline-block;
   text-align: center;
 }
-
 .button {
   background-color: #2196f3;
+  font-family: 'Times New Roman', Times, serif;
   border: none;
   border-radius: 8pt;
   color: white;
   padding: 8pt;
-  width: 90%;
-  max-width: 500px;
+  width: 50%;
+  min-width: 500pt;
   text-align: center;
   text-decoration: none;
   display: block;
@@ -162,6 +150,7 @@ div.axis_name {
 
 .small_button, .small_button_off {
   background-color: #333;
+  font-family: 'Times New Roman', Times, serif;
   border: none;
   border-radius: 8pt;
   color: white;
@@ -175,9 +164,11 @@ div.axis_name {
   margin: -2px auto;
   cursor: pointer;
 }
+
 .small_button:hover, .small_button:focus {
   background: #222;
 }
+
 .small_button_off {
   background-color: #ddd;
   color: #888;
@@ -185,32 +176,32 @@ div.axis_name {
   cursor: not-allowed;
   margin: -4px auto;
 }
-
 .arrow {
   width: 60%;
   height: auto;
 }
-
-div.explanation_blurb_left,
-div.explanation_blurb_right {
+div.explanation_blurb_left {
   vertical-align: top;
-  width: 30%;
+  width: 37%;
   margin-left: 1%;
   margin-right: 1%;
 }
-
+div.explanation_blurb_right {
+  vertical-align: top;
+  width: 37%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
 div.explanation_axis {
   width: 20.9%;
   vertical-align: top;
 }
-
 div.axis {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 div.bar {
   height: 36pt;
   line-height: 36pt;
@@ -226,8 +217,8 @@ div.bar {
   display: block;
   width: 50%;
 }
-
 div.text-wrapper {
+  font-family: 'Times New Roman', Times, serif;
   font-size: 36pt;
   line-height: 36pt;
   color: #222222;
@@ -258,26 +249,18 @@ div.fastgrowth { background-color: #d40000; text-align: right; border-left-style
 span.weight-300 {
   font-weight: 300;
 }
-
 .explanation_bg {
   background-color: #eeeeee;
   border-radius: 25px;
   margin-top: 15px;
 }
-
 #banner {
   border-color: #444444;
   border-style: solid;
   border-width: 2px;
   border-radius: 8pt;
   display: block;
-  margin: 8pt auto;
-}
-
-@media (max-width: 768px) {
-  h1 { font-size: 3rem; }
-  h2 { font-size: 2rem; }
-  .button { font-size: 1.25rem; }
-  p.question { font-size: 1.25rem; }
-  .small_button { font-size: 1rem; }
+  margin: 8pt;
+  margin-left: auto;
+  margin-right: auto;
 }
