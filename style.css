@@ -1,4 +1,6 @@
 html {
+  min-width: 810px;
+  min-height: 1080px;
   background-color: #bbbbbb;
   padding: 0px;
   scroll-behavior: smooth;
