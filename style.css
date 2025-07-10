@@ -1,7 +1,7 @@
 html {
   min-width: 810px;
   min-height: 810px;
-  background-color: antiquewhite;
+  background-color: #ffffff;
   padding: 0px;
   scroll-behavior: smooth;
 }
@@ -11,7 +11,7 @@ body {
   margin: 0 auto;
   padding: 2em;
   background-color: #eeeeee;
-  border-color: olive;
+  border-color: #05001d;
   border-left-style: solid;
   border-right-style: solid;
   border-width: 20px;
@@ -49,7 +49,7 @@ p.question {
   width: 70%;
   min-width: 500pt;
   min-height: 144pt;
-  background-color: white;
+  background-color: #ffffff;
   padding: 16pt;
   border-radius: 16pt;
   font-size: 36pt;
