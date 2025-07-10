@@ -1,7 +1,7 @@
 html {
   min-width: 810px;
   min-height: 810px;
-  background-color: #F5F5DC;
+  background-color: antiquewhite;
   padding: 0px;
   scroll-behavior: smooth;
 }
@@ -10,14 +10,14 @@ body {
   min-height: calc(100vh - 4em);
   margin: 0 auto;
   padding: 2em;
-  background-color: #F7F7F2;
-  border-color: #eeeeee;
+  background-color: azure;
+  border-color: olive;
   border-left-style: solid;
   border-right-style: solid;
   border-width: 20px;
 }
 p {
-  color: #444444;
+  color: black;
   font-family: 'Times New Roman', Times, serif;
   font-size: 18.5pt;
   line-height: 1.15;
@@ -37,19 +37,19 @@ p.value {
 
 p.axis_name {
   margin-top: 50px;
-  color: #333333;
+  color: black;
   font-size: 14pt;
   font-family: 'Times New Roman', Times, serif;
 }
 p.question {
   margin: 16pt auto;
-  color: #333333;
+  color: black;
   font-family: 'Times New Roman', Times, serif;
   font-weight: normal;
   width: 70%;
   min-width: 500pt;
   min-height: 144pt;
-  background-color: #eeeeee;
+  background-color: white;
   padding: 16pt;
   border-radius: 16pt;
   font-size: 36pt;
@@ -60,7 +60,7 @@ p.question {
 
 }
 h1 {
-  color: #000000;
+  color: black;
   font-family: 'Times New Roman', Times, serif;
   font-size: 72pt;
   text-align: center;
@@ -69,7 +69,7 @@ h1 {
   margin-bottom: 0pt;
 }
 h2 {
-  color: #000000;
+  color: black;
   font-family: 'Times New Roman', Times, serif;
   font-size: 34pt;
   line-height: 36pt;
@@ -84,7 +84,7 @@ a {
   font-family: inherit;
 }
 div.center {
-  background-color: #F7F7F2;
+  background-color: azure;
   font-family: 'Times New Roman', Times, serif;
   border-radius: 8pt;
   padding: 6pt;
@@ -143,8 +143,8 @@ div.axis_name {
 .stronglyAgree:hover, .stronglyAgree:focus { background: #c2a032; }
 .agree { background: #e2bb3b; }
 .agree:hover, .agree:focus { background: #ddb73a; }
-.neutral { background: #F9F8F8; }
-.neutral:hover, .neutral:focus { background: #e7e7e7; }
+.neutral { background: #e0e0e0; }
+.neutral:hover, .neutral:focus { background: #c4c4c4; }
 .disagree { background: #7a346c; }
 .disagree:hover, .disagree:focus { background: #6e2f62; }
 .stronglyDisagree { background: #5C2751; }
