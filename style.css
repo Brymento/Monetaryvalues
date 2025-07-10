@@ -1,7 +1,7 @@
 html {
   min-width: 810px;
   min-height: 810px;
-  background-color: #bbbbbb;
+  background-color: #F5F5DC;
   padding: 0px;
   scroll-behavior: smooth;
 }
@@ -10,7 +10,7 @@ body {
   min-height: calc(100vh - 4em);
   margin: 0 auto;
   padding: 2em;
-  background-color: #dddddd;
+  background-color: #F7F7F2;
   border-color: #eeeeee;
   border-left-style: solid;
   border-right-style: solid;
@@ -60,7 +60,7 @@ p.question {
 
 }
 h1 {
-  color: #222222;
+  color: #000000;
   font-family: 'Times New Roman', Times, serif;
   font-size: 72pt;
   text-align: center;
@@ -69,7 +69,7 @@ h1 {
   margin-bottom: 0pt;
 }
 h2 {
-  color: #333333;
+  color: #000000;
   font-family: 'Times New Roman', Times, serif;
   font-size: 34pt;
   line-height: 36pt;
@@ -84,11 +84,11 @@ a {
   font-family: inherit;
 }
 div.center {
-  background-color: #eeeeee;
+  background-color: #F7F7F2;
   font-family: 'Times New Roman', Times, serif;
   border-radius: 8pt;
   padding: 6pt;
-  color: white;
+  color: #F5F5DC;
   width: 80%;
   min-width: 488pt;
   text-align: center;
@@ -108,7 +108,7 @@ div.quadcolumn {
   width: 23.75%;
 }
 div.axis_name {
-  color: #333333;
+  color: #000000;
   font-size: 0.6em;
   font-family: 'Times New Roman', Times, serif;
   display: inline-block;
@@ -123,7 +123,7 @@ div.axis_name {
   text-align: center;
 }
 .button {
-  background-color: #2196f3;
+  background-color: #000000;
   font-family: 'Times New Roman', Times, serif;
   border: none;
   border-radius: 8pt;
@@ -138,17 +138,17 @@ div.axis_name {
   margin: -2px auto;
   cursor: pointer;
 }
-.button:hover, .button:focus { background: #1687e0; }
-.stronglyAgree { background: #1b5e20; }
-.stronglyAgree:hover, .stronglyAgree:focus { background: #154a19; }
-.agree { background: #4caf50; }
-.agree:hover, .agree:focus { background: #29942e; }
-.neutral { background: #949494; }
-.neutral:hover, .neutral:focus { background: #656565; }
-.disagree { background: #f44336; }
-.disagree:hover, .disagree:focus { background: #d6271a; }
-.stronglyDisagree { background: #b71c1c; }
-.stronglyDisagree:hover, .stronglyDisagree:focus { background: #a00e0e; }
+.button:hover, .button:focus { background: #2b373f; }
+.stronglyAgree { background: #D4AF37; }
+.stronglyAgree:hover, .stronglyAgree:focus { background: #c2a032; }
+.agree { background: #e2bb3b; }
+.agree:hover, .agree:focus { background: #ddb73a; }
+.neutral { background: #F9F8F8; }
+.neutral:hover, .neutral:focus { background: #e7e7e7; }
+.disagree { background: #7a346c; }
+.disagree:hover, .disagree:focus { background: #6e2f62; }
+.stronglyDisagree { background: #5C2751; }
+.stronglyDisagree:hover, .stronglyDisagree:focus { background: #522248; }
 
 .small_button, .small_button_off {
   background-color: #333;
@@ -214,7 +214,7 @@ div.bar {
   border-right-width: 1px;
   border-top-style: solid;
   border-bottom-style: solid;
-  border-color: #222222;
+  border-color: #000000;
   background-color: #eeeeee;
   display: block;
   width: 50%;
@@ -223,7 +223,7 @@ div.text-wrapper {
   font-family: 'Times New Roman', Times, serif;
   font-size: 36pt;
   line-height: 36pt;
-  color: #222222;
+  color: #000000;
   display: inline-block;
 }
 
