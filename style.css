@@ -10,7 +10,7 @@ body {
   min-height: calc(100vh - 4em);
   margin: 0 auto;
   padding: 2em;
-  background-color: azure;
+  background-color: #eeeeee;
   border-color: olive;
   border-left-style: solid;
   border-right-style: solid;
@@ -84,7 +84,7 @@ a {
   font-family: inherit;
 }
 div.center {
-  background-color: azure;
+  background-color: #eeeeee;
   font-family: 'Times New Roman', Times, serif;
   border-radius: 8pt;
   padding: 6pt;
